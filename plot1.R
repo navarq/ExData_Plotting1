@@ -20,7 +20,7 @@ plot1 <- function(){
         ## Move to the extracted directory
         setwd("./data")
         
-        # Use sqldf into workspace
+        # load package sqldf into workspace
         require(sqldf)
         
         # Use SQL and string matching to get data by date

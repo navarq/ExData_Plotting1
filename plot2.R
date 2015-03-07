@@ -20,7 +20,7 @@ plot2 <- function(){
         ## Move to the extracted directory
         setwd("./data")
         
-        # Use sqldf into workspace
+        # load package sqldf into workspace
         require(sqldf)
         
         # Use SQL and string matching to get data by date
@@ -32,6 +32,9 @@ plot2 <- function(){
         )
         # Close all connections
         closeAllConnections()
+        
+        # load package lubridate into workspace
+        require(lubridate)
         plot(dmy_hms(paste(households$Date, households$Time)),
              households$Global_active_power, 
              type="l",
