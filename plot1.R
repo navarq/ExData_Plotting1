@@ -33,7 +33,7 @@ plot1 <- function(){
         # Close all connections
         closeAllConnections()
         
-        hist(houses$globalactivepower, col="red", xlab="Global Active Power (kilowatts)", main="Global Active Power")
+        hist(households$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main="Global Active Power")
         # Save in original directory, defaults to 480x480 width height in pixels
         dev.copy(png,file="../plot1.png")
         dev.off()
