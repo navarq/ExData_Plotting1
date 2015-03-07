@@ -1,4 +1,4 @@
-plot1 <- function(){
+plot2 <- function(){
         
         # hold originally directory location
         old.dir <- getwd()
@@ -32,8 +32,10 @@ plot1 <- function(){
         )
         # Close all connections
         closeAllConnections()
-        
-        hist(households$globalactivepower, col="red", xlab="Global Active Power (kilowatts)", main="Global Active Power")
+        plot(dmy_hms(paste(households$Date, households$Time)),
+             households$Global_active_power, 
+             type="l",
+             ylab="Global Active Power (kilowatts)", xlab="")
         # Save in original directory, defaults to 480x480 width height in pixels
         dev.copy(png,file="../plot2.png")
         dev.off()
