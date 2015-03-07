@@ -38,6 +38,7 @@ plot3 <- function(){
         
         householdDates <- dmy_hms(paste(households$Date, households$Time))
         
+        png(file="../plot3.png",width=480, height=480)
         plot(householdDates,
              households$Sub_metering_1, 
              type="n",
@@ -54,8 +55,7 @@ plot3 <- function(){
                        "Sub_metering_2",
                        "Sub_metering_3"
                ))
-        # Save in original directory, defaults to 480x480 width height in pixels
-        dev.copy(png,file="../plot3.png")
+
         dev.off()
         setwd(old.dir)
 }
